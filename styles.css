@@ -4,14 +4,15 @@
 
 body {
     margin: 0px;
+    width: 100%;
 }
 
 @media (min-width: 0px) {
-    #btns { display: block; }  /* show it on small screens */
+    #btns { display: block; }
 }
   
 @media (min-width: 992px) {
-    #btns { display: none; }   /* hide it elsewhere */
+    #btns { display: none; }
 }
 
 #btns {
