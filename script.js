@@ -11,7 +11,12 @@
         LEFT: 4
     };
 
-    var tileSize = 15;
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    if (screenWidth < 992) {
+        var tileSize = screenWidth / nrOfTilesInX;
+    } else {
+        var tileSize = 15;
+    }
     var nrOfTilesInX = 50;
     var nrOfTilesInY = 30;
 
@@ -36,8 +41,8 @@
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-    ctx.canvas.width = nrOfTilesInX * tileSize + tileSize;
-    ctx.canvas.height = nrOfTilesInY * tileSize + tileSize;
+    ctx.canvas.width = nrOfTilesInX * tileSize;
+    ctx.canvas.height = nrOfTilesInY * tileSize;
 
 
     /*******************************************************
@@ -141,12 +146,12 @@
 
     function checkWallCollision() {
         // in X direction
-        if (snakeX < 0 || snakeX > nrOfTilesInX) {
+        if (snakeX < 0 || snakeX >= nrOfTilesInX) {
             gameOver();
         }
 
         // in Y direction
-        if (snakeY < 0 || snakeY > nrOfTilesInY) {
+        if (snakeY < 0 || snakeY >= nrOfTilesInY) {
             gameOver();
         }
     }
