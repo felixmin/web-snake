@@ -36,8 +36,8 @@
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-    ctx.canvas.width = nrOfTilesInX * tileSize;
-    ctx.canvas.height = nrOfTilesInY * tileSize;
+    ctx.canvas.width = nrOfTilesInX * tileSize + tileSize;
+    ctx.canvas.height = nrOfTilesInY * tileSize + tileSize;
 
 
     /*******************************************************
