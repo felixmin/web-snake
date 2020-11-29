@@ -21,6 +21,7 @@
     var snakeX = 2;
     var snakeY = 2;
     var snakeDirection = Direction.RIGHT;
+    var bodyDirection = Direction.LEFT;
 
     var foodColor = "green";
     var foodX = getRandomNumber(0, nrOfTilesInX-1);
@@ -83,12 +84,16 @@
 
         if (snakeDirection == Direction.UP) {
             snakeY = snakeY - 1;
+            bodyDirection = Direction.DOWN
         } else if (snakeDirection == Direction.RIGHT) {
             snakeX = snakeX + 1;
+            bodyDirection = Direction.LEFT
         } else if (snakeDirection == Direction.DOWN) {
             snakeY = snakeY + 1;
+            bodyDirection = Direction.UP
         } else if (snakeDirection == Direction.LEFT) {
             snakeX = snakeX - 1;
+            bodyDirection = Direction.RIGHT
         }
 
 
@@ -169,13 +174,13 @@
     *******************************************************/
 
     function keyPressed(event) {
-        if (event.key == "ArrowUp") {
+        if (event.key == "ArrowUp" && bodyDirection != Direction.UP) {
             snakeDirection = Direction.UP;
-        } else if (event.key == "ArrowRight") {
+        } else if (event.key == "ArrowRight" && bodyDirection != Direction.RIGHT) {
             snakeDirection = Direction.RIGHT;
-        } else if (event.key == "ArrowDown") {
+        } else if (event.key == "ArrowDown" && bodyDirection != Direction.DOWN) {
             snakeDirection = Direction.DOWN;
-        } else if (event.key == "ArrowLeft") {
+        } else if (event.key == "ArrowLeft" && bodyDirection != Direction.LEFT) {
             snakeDirection = Direction.LEFT;
         }
     }
