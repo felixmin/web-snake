@@ -105,6 +105,14 @@
             score = score + 1;
             generateNewFood();
         }
+
+        snakebody.some( s => {
+            if (s[0] == foodX && s[1] == foodY) {
+                snakebody.push((snakeX,snakeY))
+                score = score + 1;
+                generateNewFood();
+            }
+        })
     }
 
     function checkBodyCollision() {
@@ -118,6 +126,7 @@
     function generateNewFood() {
         foodX = getRandomNumber(0, nrOfTilesInX-1);
         foodY = getRandomNumber(0, nrOfTilesInY-1);
+        checkFoodCollision();
     }
 
     function gameOver() {
