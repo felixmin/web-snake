@@ -15,12 +15,19 @@
     var nrOfTilesInX = 50;
     var nrOfTilesInY = 30;
 
+    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    
     if (screenWidth < 992) {
         var tileSize = screenWidth / nrOfTilesInX;
     } else {
         var tileSize = 15;
     }
+
+    document.getElementById("btnUp").style.height = (screenHeight - nrOfTilesInY * tileSize) * 0.5;
+    document.getElementById("btnLeft").style.height = screenHeight - nrOfTilesInY * tileSize;
+    document.getElementById("btnRight").style.height = screenHeight - nrOfTilesInY * tileSize;
+    document.getElementById("btnDown").style.height = (screenHeight - nrOfTilesInY * tileSize) * 0.5;
 
     var snakeColor = "red";
     var snakebody = [];
