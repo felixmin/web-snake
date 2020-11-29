@@ -57,7 +57,7 @@
 
     var headingHeight = document.getElementById('heading').style.height;
 
-    document.getElementById("btns").style.height = screenHeight - ctx.canvas.height - headingHeight;
+    document.getElementById("btns").style.height = screenHeight - ctx.canvas.height - headingHeight + "px";
 
 
     /*******************************************************
