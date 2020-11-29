@@ -13,7 +13,8 @@
 
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
     if (screenWidth < 992) {
-        var tileSize = screenWidth / nrOfTilesInX;
+        var tileSize = parseInt(screenWidth/nrOfTilesInX)
+;
     } else {
         var tileSize = 15;
     }
