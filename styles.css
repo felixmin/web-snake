@@ -7,6 +7,10 @@ body {
     width: 100%;
 }
 
+#content {
+    margin: auto;
+}
+
 @media (min-width: 0px) {
     #btns { display: block; }
 }
