@@ -15,17 +15,7 @@
     var nrOfTilesInX = 50;
     var nrOfTilesInY = 30;
 
-    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    
-    
-    if (screenWidth < 992) {
-        var tileSize = screenWidth / nrOfTilesInX;
-    } else {
-        var tileSize = 15;
-    }
-
-
+    var tileSize
 
     var snakeColor = "red";
     var snakebody = [];
@@ -48,23 +38,13 @@
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-    ctx.canvas.width = nrOfTilesInX * tileSize;
-    ctx.canvas.height = nrOfTilesInY * tileSize;
-
-    /*******************************************************
-    * Styling
-    *******************************************************/  
-
-    var headingHeight = document.getElementById('heading').style.height;
-
-    document.getElementById("btns").style.height = (screenHeight - ctx.canvas.height - headingHeight) + "px";
-
 
     /*******************************************************
     * GAME LOOP
     *******************************************************/
 
     function gameLoop() {
+        setCanvasSize();
         clearCanvas();
 
         moveSnake();
@@ -171,6 +151,26 @@
         }
     }
 
+
+    /*******************************************************
+    * SCREEN SETUP FUNCTIONS
+    *******************************************************/
+    function setCanvasSize() {
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        
+        if (screenWidth < 992) {
+            tileSize = screenWidth / nrOfTilesInX;
+        } else {
+            tileSize = 15;
+        }
+
+        ctx.canvas.width = nrOfTilesInX * tileSize;
+        ctx.canvas.height = nrOfTilesInY * tileSize;
+    
+
+        document.getElementById("btns").style.height = (screenHeight - ctx.canvas.height) + "px";
+    }
 
     /*******************************************************
     * DRAWING FUNCTIONS

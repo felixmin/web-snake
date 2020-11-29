@@ -1,14 +1,6 @@
-#canvas{
-
-}
-
 body {
     margin: 0px;
     width: 100%;
-}
-
-#content {
-    margin: auto;
 }
 
 @media (min-width: 0px) {
@@ -17,11 +9,28 @@ body {
   
 @media (min-width: 992px) {
     #btns { display: none; }
+
+    canvas {
+        margin-top: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 #btns {
-    width:100%;
-    position:relative
+    width: 100%;
+    position: relative;
+}
+
+canvas {
+    display: block;
+}
+
+#content {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
