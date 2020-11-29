@@ -1,11 +1,10 @@
- // Within the script-tag you have to write Javascript
 
+    /*******************************************************
+    * GAME LOGIC VARIABLES
+    *******************************************************/
 
-      /*******************************************************
-        * GAME LOGIC VARIABLES
-        *******************************************************/
-
-       const Direction = {
+       
+    const Direction = {
         UP: 1,
         RIGHT: 2,
         DOWN: 3,
@@ -181,6 +180,11 @@
   /*******************************************************
     * USER INTERACTION FUNCTIONS
     *******************************************************/
+    document.getElementById("btnLeft").onclick = () => { keyPressed({key: 'ArrowLeft'}) };
+    document.getElementById("btnRight").onclick = () => { keyPressed({key: 'ArrowRight'}) };
+    document.getElementById("btnDown").onclick = () => { keyPressed({key: 'ArrowDown'}) };
+    document.getElementById("btnUp").onclick = () => { keyPressed({key: 'ArrowUp'}) };
+
 
     function keyPressed(event) {
         if (event.key == "ArrowUp" && bodyDirection != Direction.UP) {
